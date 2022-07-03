@@ -27,7 +27,7 @@ def check_exists_by_xpath(driver, xpath):
 # basic configuration
 reservation_site_add = 'https://etk.srail.kr/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000'
 site_add = 'https://etk.srail.kr/cmc/01/selectLoginForm.do?pageId=TK0701000000'
-driver_path = r"C:\Users\yym30\OneDrive - kaist.ac.kr\문서\macros\chromedriver.exe"
+driver_path = r"chromedriver.exe"
 
 # User info
 phone_number = '01023613055'
@@ -36,13 +36,13 @@ passwd = 'youym010329#'
 # Travel info
 city_from = '동탄'
 city_to = '대전'
-date = '20220607'
-departure_time = '06'
-from_item = 1
-num_items = 3
+date = '20220703'
+departure_time = '18'
+from_item = 0
+num_items = 2
 
 if __name__ == '__main__':
-  input("Press Enter to login...")
+  input("Press Enter go to reservation page")
   # load driver
   chrome_options = Options()
   driver = Chrome(options=chrome_options, executable_path = driver_path)
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
   # goto reservation site
   # print(driver.current_url)
-  input("Press Enter to go to reservation site...")
+  # input("Press Enter to go to reservation site...")
   driver.get(reservation_site_add)
   departure = driver.find_element_by_xpath('//*[@id="dptRsStnCdNm"]')
   arrival = driver.find_element_by_xpath('//*[@id="arvRsStnCdNm"]')
